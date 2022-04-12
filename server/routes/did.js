@@ -70,7 +70,7 @@ router.post("/create", (req, res) => {
             .then((user) => {
               const requestObject = {
                 issuerDID: did,
-                name: "Report",
+                name: "Medical Report",
                 description:
                   "A report of the patient's condition and the doctor's opinion.",
                 properties: [
@@ -123,7 +123,7 @@ router.post("/create", (req, res) => {
                     key: "condition",
                     propType: "string",
                     propFormat: "text",
-                  }
+                  },
                 ],
               };
               const stringData = JSON.stringify(requestObject);
@@ -156,7 +156,7 @@ router.post("/create", (req, res) => {
                           .json({ error: "The same schema alredy exists" });
                       } else {
                         const newSchema = new Schema({
-                          name: "Report",
+                          name: "Medical Report",
                           description:
                             "A report of the patient's condition and the doctor's opinion.",
                           did: schemaDid,

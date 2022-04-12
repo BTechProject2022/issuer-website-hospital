@@ -46,10 +46,11 @@ router.post("/create", (req, res) => {
                       hospitalName: "Apollo",
                       birthDate: "01/10/2000",
                       patientId: user.patientId,
-                      address: 'Apollo Hospital, Nerul, Navi Mumbai, Maharashtra, India',
-                      phoneNumber: '+91-9876543210',
-                      doctorName: 'Dr. John Doe',
-                      condition: 'Diabetes',
+                      address:
+                        "Apollo Hospital, Nerul, Navi Mumbai, Maharashtra, India",
+                      phoneNumber: "+91-9876543210",
+                      doctorName: "Dr. John Doe",
+                      condition: "Diabetes",
                     };
                     const hash = objectHash(credentialSubject);
                     const signHash = await secp.sign(hash, admin.privateKey, {
@@ -66,6 +67,7 @@ router.post("/create", (req, res) => {
                       issuerDID: admin.did,
                       ownerDID: reqObject.userDid,
                       issuanceDate: new Date().toISOString(),
+                      credentialName: schema.name,
                       credentialSubject: credentialSubject,
                       proof: {
                         type: "RsaSignature2018",
