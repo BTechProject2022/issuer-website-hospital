@@ -1,6 +1,9 @@
 import React from "react";
 import { Button, Container, Navbar, Nav } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouseMedical } from "@fortawesome/free-solid-svg-icons";
+
 import { logoutUser } from "../../actions/authActions";
 
 const NavBar = () => {
@@ -17,8 +20,14 @@ const NavBar = () => {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">
-            <h4>Apollo Website</h4>
-          </Navbar.Brand>
+            <FontAwesomeIcon
+                icon={faHouseMedical}
+                size="lg"
+                color="white"
+                className="mr-2"
+              />{" "}
+              Apollo Website
+            </Navbar.Brand>
           {isAuthenticated && (
             <>
               <Nav className="me-auto">
