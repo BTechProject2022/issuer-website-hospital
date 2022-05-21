@@ -69,6 +69,7 @@ router.post("/create", (req, res) => {
                       issuanceDate: new Date().toISOString(),
                       credentialName: schema.name,
                       credentialSubject: credentialSubject,
+                      schemaDid: reqObject.schemaDid,
                       proof: {
                         type: "RsaSignature2018",
                         created: new Date().toISOString(),
